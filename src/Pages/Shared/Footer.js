@@ -1,7 +1,10 @@
+import { getDate, getYear } from 'date-fns';
 import React from 'react';
 import footer from '../../assets/images/footer.png';
 
 const Footer = () => {
+    const date = new Date();
+    const year = getYear(date);
     return (
         <footer style={{
             background: `url(${footer})`,
@@ -30,7 +33,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='my-10 text-center'>
-                <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+                <p>Copyright © {year} - All right reserved by ACME Industries Ltd</p>
             </div>
         </footer>
     );

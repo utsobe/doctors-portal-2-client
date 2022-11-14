@@ -13,7 +13,7 @@ const MakeAppointment = () => {
             </div>
             <div className='flex-1'>
                 <h3 className='text-xl text-primary font-bold'>Appointment</h3>
-                <h2 className='text-3xl text-white'>Make an appointment today</h2>
+                <h2 className='text-3xl text-white py-5'>Make an appointment today</h2>
                 <p className='text-white'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum alias temporibus quas repellat odio pariatur consectetur atque perferendis doloribus cupiditate quia consequuntur totam mollitia autem eos placeat nostrum earum iusto harum explicabo laboriosam, soluta illum consequatur adipisci! Quae, sint quam!</p>
                 <PrimaryButton>Get Started</PrimaryButton>
             </div>
