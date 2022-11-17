@@ -10,7 +10,7 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
         console.log(_id, name, slot);
         setTreatment(null);
         const text = 'this is the new monitor thats it';
-    }
+    };
 
     return (
         <div>
