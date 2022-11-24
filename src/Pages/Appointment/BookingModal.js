@@ -1,22 +1,44 @@
 import { format } from 'date-fns';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { json } from 'react-router';
 import auth from '../../firebase.init';
 
 const BookingModal = ({ date, treatment, setTreatment }) => {
     const { _id, name, slots } = treatment;
     const [user, loading, error] = useAuthState(auth);
+    const formattedDate = format(date, 'PP');
 
     const handleBooking = e => {
         e.preventDefault();
         const slot = e.target.slot.value;
         console.log(_id, name, slot);
         const booking = {
-
-
+            treatmentId: _id,
+            treatment: name,
+            date: formattedDate,
+            slot,
+            patient: user.email,
+            patientName: user.displayName,
+            phone: e.target.phone.value
         }
-        setTreatment(null);
-        const text = 'this is the new monitor thats it';
+        console.log(booking);
+
+        fetch('http://localhost:5000/booking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                // to close the modal
+                setTreatment(null);
+            })
+
+
     };
 
     return (
