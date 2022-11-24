@@ -11,6 +11,10 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
         e.preventDefault();
         const slot = e.target.slot.value;
         console.log(_id, name, slot);
+        const booking = {
+
+
+        }
         setTreatment(null);
         const text = 'this is the new monitor thats it';
     };
