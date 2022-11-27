@@ -14,6 +14,9 @@ const Navbar = () => {
         <li><Link to='/review'>Review</Link></li>
         <li><Link to='/contact'>Contact</Link></li>
         <li><Link to='/about'>About</Link></li>
+        {
+            user && <li><Link to='/dashboard'>Dashboard</Link></li>
+        }
         <li>{user ? <button onClick={async () => await signOut()} className="btn btn-ghost">Sign Out</button> : <Link to='/login'>Login</Link>}</li>
     </>
     return (
@@ -29,7 +32,7 @@ const Navbar = () => {
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">Doctors Portal</a>
             </div>
-            <div className="navbar-end hidden lg:flex">
+            <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
